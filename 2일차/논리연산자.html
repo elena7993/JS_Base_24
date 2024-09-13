@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const num_1 = 10;
+        const num_2 = 2;
+
+        // *논리연산자
+        // =>두개 이상의 항을 비교하여 boolean값으로 변환함
+
+        // 1.AND(&&) 연산자
+        // =>값을 비교 후 하나라도 거짓이 있으면 거짓으로 반환함
+        // =>로그인(아이디, 비밀번호 둘다 참이어야 함) 
+        console.log(num_1 > num_2 && num_1 < num_2);
+
+        // 2.OR(||) 연산자
+        // =>값을 비교후 하나라도 참이 있으면 참으로 반화함(조금 느슨한 느낌) 
+        // =>회원가입할 때 (가입란을 다 채우지 않아도 회원가입 가능) 
+        console.log(num_1 > num_2 || num_1 <num_2);
+
+        // 3.NOT(!) 연산자
+        // =>거꾸로 만들어주는게 NOT연산자 
+        // =>다크모드 만들때 사용
+        const result = num_1 > num_2
+        console.log(!result);
+
+        // =>result는 참이나 !를 붙여서 거꾸로 만듬
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

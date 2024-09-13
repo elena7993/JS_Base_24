@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    // console.log(100);
+
+    // let myNunber = 100;
+
+    // console.log(100);
+
+    let myNumber1 = 0;
+    let myNumber2 = 1;
+    let myNumber3 = 500;
+    let myNumber4 = 10000;
+
+    console.log(myNumber1);
+    console.log(myNumber3);
+    console.log(myNumber4);
+    console.log(myNumber2);
+
+    console.log(myNumber2 + myNumber4);
+
+    let text = "Code Kim";
+    
+    console.log(text);
+
+    let myAnswer = true;
+
+    let yourAnswer = false;
+
+    console.log(myAnswer);
+
+    let greeting = "Hello wrold";
+    
+    let myName = "Code Kim";
+
+    console.log(greeting);
+    console.log(myName);
+
+    console.log(greeting + " " + myName);
+
+    console.log("Hello world" + "    " + "Code Kim");
+
+    console.log("");
+
+    console.log(greeting + '   ' + myName);
+
+    console.log(2 +"2");
+    // => 숫자열2와 문자열2를 합치면 문자열이 된다.
+
+    const myString = "Hello! wecode!!"
+
+    console.log(myString.length)
+
+    console.log("The length of pepsi is",
+      "pepsi".length);
+      // => 5는 숫자열
+
+    console.log("The length of pepsi is" + "pepsi".length);
+    // =>5는 문자열
+
+    // ------------------------------------------------------
+
+
+    function sayHello () {
+      console.log("Hello! Code Kim!😋")
+    }
+    // =>선언(아웃풋없는 상태)
+
+    sayHello()
+    // =>호출
+
+    function sayMyname() {
+      console.log("김코드")
+    }
+
+    sayMyname()
+
+    function text_1() {
+      console.log("할 수 있다! 쫄지마라!!")
+    }
+
+    text_1()
+
+    function text_2() {
+      console.log("we'are strong mate!")
+    }
+
+    text_2()
+
+    // -------------------------------------------
+    //return!! 
+
+    function sayHello() {
+      let friend = "Codd Kim"
+      console.log("Hello! " + friend)
+    }
+
+    sayHello()
+
+    function sayHello2() {
+      let friend = "Code Kim"
+      return "Return " + friend
+    }
+
+    sayHello2()
+    // =>콘솔에서 눈으로 볼 수 없음
+    // =>리턴한 값을 변수에 할당할 수 있음
+
+    console.log(sayHello2())
+    // =>이제서야 콘솔에 나옴
+
+    let myfriend = sayHello2()
+
+    console.log(myfriend);
+    // =>Return Code Kim  콘솔에 찍힘!( 리턴한 갑을 변수에 할당할 수 있다는 말임)
+
+    function addNumbers(){
+      return 100 + 200
+    }
+
+    addNumbers()
+
+    console.log(addNumbers())
+
+    let myNumber300 = addNumbers();
+
+    console.log(myNumber300);
+
+    function sayHello3() {
+      let sentence = "Hello!! "
+      let name = "Code Kim"
+
+      return sentence + name
+    }
+
+    sayHello3()
+
+    console.log(sayHello3())
+
+    function tenThousand(){
+      return 10000
+    }
+
+    tenThousand()
+
+    console.log(tenThousand())
+
+    let bigNumber = tenThousand();
+
+    console.log(bigNumber);
+    // --------------------------------------------
+    // 사랑하는 나으 소
+    // 오늘 'WECODE' 강의를 들었어!! 7강이야!
+    // 'function'은 정말 어렵더군. 하지만 내가 누구?
+    // 나는 할 수 있다구! 재밌어😍
+
+    function letters() {
+      let emotion = "재밌어"
+      
+      return emotion
+    }
+
+    console.log(letters());
+
+    let myfeeling = letters();
+
+    function plusnumbers() {
+      return 150 + 350 + 450
+    }
+
+    plusnumbers()
+
+    console.log(plusnumbers());
+
+    let cal_answer = plusnumbers()
+
+    console.log(cal_answer)
+
+    // -------------------------------------------------------------
+    // input이 있는 경우
+    // function sayHello4(input) {
+  
+    // }
+
+    function sayHello4 (name) {
+      return "Hello, " + name + "!"
+    }
+    // =>name(input) 부분을 파라미터(parameter)라고 부르기도함
+
+    // sayHello4("wecode")
+    // =>리턴이기에 나오지 않음 콘솔에 나오지 않음
+
+    let greeting_4 = sayHello4("wecode") 
+    // =>함수를 호출할 때 파라미너의 자리는 argument라고 부름 ("wecode")자리
+    
+    console.log(greeting_4);
+    // =>변수에 담아서 선언해서 콘솔에 찍어내 보임
+
+    let fristExample = sayHello4("wecode")
+    let SecondExample = sayHello4("elena")
+    let ThirdExample = sayHello4("soheon")
+
+    // console.log(fristExample);
+    // console.log(SecondExample);
+    // console.log(ThirdExample);
+    
+    
+    // console.log(sayHello4("Developers"))
+  
+
+    // function sayHello5 (name) {
+    //   console.log("Hello " + name)
+    //   console.log("nice to meet you " + name + "!")
+    // }
+
+    // sayHello5("wecode")
+
+    // sayHello5("Code Kim")
+
+    // sayHello5("Mac book")
+
+    function addNumbers_2 (num1, num2) {
+      let result = num1 + num2
+      return result
+    }
+
+   let addedNumber = addNumbers_2 (3, 100)
+
+   console.log(addedNumber)
+
+
+
+   function plus_nums (num3, num4) {
+   let result = num3 * num4
+   return result
+  }
+
+  let answer_4 = plus_nums (14, 33)
+
+  console.log(answer_4)
+
+
+  function devideNumbers (num5, num6) {
+  let result = num5 / num6
+  return result
+ }
+
+  let devidedNumber = devideNumbers (500, 10000)
+
+  console.log(devidedNumber);
+
+  // -----------------------------------------
+  // boolean
+
+  console.log(true);
+  console.log(false);
+
+  console.log(1 + 1 === 2)
+
+  console.log(1 + 1 === 3)
+  // =>콘솔에 true , false 로 찍힘 
+
+  // *조건문의 시작
+  // 만약 (조건이) 참이라면 ~
+  // 만약 (조건이) 거짓이라면 ~
+
+  console.log(1 + 1 !== 3)
+  console.log(1 + 1 !== 2)
+
+  console.log(100 > 5000)
+
+  console.log(100 >= 100)
+  // =>크거나 같다
+
+  if (1 + 1 === 2) {
+    console.log("1더하기 1은 2입니다.")
+  }
+
+  // let hisName = "wecode Lee"
+
+  // if (hisName === "wecode Lee")
+  // console.log("Hi, my fridend!")
+
+
+  // let hisName = "Code Kim"
+
+  // if (hisName === "Code Kim") {
+  //   console.log("저는 김코드입니다.")
+  // } else {
+  //   console.log("저는 김코드가 아닙니다.")
+  // }
+
+  let hisName = "elena"
+
+  if (hisName === "Code Kim") {
+    console.log("저는 김코드입니다.")
+  } else if (hisName === "Hello Lee") {
+    console.log("저는 김코드가 아닙니다. 저는 이헬로입니다.")
+  } else {
+    console.log("저는 김코드도 아니고, 이헬로도 아닙니다.")
+  }
+
+  // ----------------------------------------------
+
+  // function isOkayToDrive(who){
+  //   if (who === "son") {
+  //     return "Nope!"
+  //   } else if (who === "dad") {
+  //     return "Good!"
+  //   } else if (who === "Grand father") {
+  //     return "Be careful!"
+  //   } else {
+  //     return "Who are you?"
+  //   }
+  // }
+
+  // console.log(isOkayToDrive("dad"))
+
+  function isokaytodrive(who) {
+    if (who === "son") {
+      return "NO!"
+    } else if (who === "dad") {
+      return "perfect!"
+    } else if (who === "elena") {
+      return "mate... can ya?"
+    } else {
+      return "get off my car!!!"
+    }
+  }
+
+  console.log(isokaytodrive("soheon"));
+
+  // ---------------------------------------------------------------
+  // 논리연산자
+
+  console.log(1 + 1 === 2 || 1 + 1 === 3 )
+  // =>or연산자는 둘 중 하나면 참이어도 참!
+
+  console.log(1 + 1 === 2 && 1 + 2 === 3)
+  // and 연산자는 둘 다 참이어야 함 참! 
+
+  let a = 0
+  let b = 100
+
+  if (a) {
+    console.log("i am falsy")
+  } else if (b) {
+    console.log("i am truthy")
+  }
+
+  // => 0은 falsy한 값이으로 콘솔에는 i am truthy 가 나타남 
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
