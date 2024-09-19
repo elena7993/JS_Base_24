@@ -34,3 +34,8 @@
 =>중앙상단 <> Code 버튼을 클릭하여
 =>Open with Github Desktop 클릭하여 프로그램 열기
 =>경로 실종됐으면 clone으로 깃허브에 있는 파일 복제 하기
+
+
+publish -> 배포, 업로드
+pull -> 저장소에 있는 내용 내려받기
+fetct -> 저장소에 있는 내용 내려받기
