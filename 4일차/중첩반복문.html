@@ -47,37 +47,14 @@
         //     }
         // }
 
-        // for(let i = 1; i < 10; i++){
-        //     document.write(`${i}단<br>`)
-        //     for(let n = 1; n < 10; n++){
-        //         document.write(`${i} x ${n} = ${i * n}<br>`)
-        //     }
-        // }
-
-        // ----------------------------------------------------------------------------------
-
-        // const num = Number(prompt("숫자입력하시오"));
-        
-        // for(let i = 1; i <= num; i++){
-        //     if(i % 3 === 0){
-        //         document.write(`${i} <br>`)
-        //     }
-        // }
-
-        const gugu = Number(prompt("숫자입력하시오"));
-        let result = gugu % 2;
-
-        if(result === 0){
-            for(let i = 2; i < 10; i+=2){
-                document.write(`${i} x ${gugu} = ${i * gugu} <br>`)
+        for(let i = 1; i < 10; i++){
+            document.write(`<h3>${i}단</h3><br>`)
+            for(let n = 1; n < 10; n++){
+                document.write(`${i} x ${n} = ${i * n}<br>`)
             }
-        }else if(result === 1){
-            for(let i =1; i < 10; i+=2){
-                document.write(`${i} x ${gugu} = ${i * gugu}<br>`)
-            }
-        }else{
-            document.write("슬퍼하지마 노노노 혼자가아냐 노노노")
         }
+        
+        
 
 
 
