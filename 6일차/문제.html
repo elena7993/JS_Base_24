@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // *문제
+        // 1.객체 하나 제작
+        // 2.주제는 유저 정보를 저장하는 객체
+        // 3.객체 속성은 username, email, profileImg 사용
+        // 4.속성에 맞게 속성값 지정
+
+        // **출력결과**
+        // ##유저정보##
+        // 유저 아이디: JavaScript
+        // 이메일: java@script.com
+        // profileImg: js.jpg
+
+        // =>write를 사용할 것
+        // =>h2 태그도 사용할 것
+
+        // const userInfo = {
+        //     username: "JavaScript",
+        //     email: "java@script.com",
+        //     profileImg: "js.jpg",
+        //     intro : function(){
+        //         document.write(`<h2>##유저정보##</h2> <br>`);
+        //         document.write(`유저 아이디: ${this.username}<br>`);
+        //         document.write(`이메일: ${this.email}<br>`);
+        //         document.write(`profileImge: ${this.profileImg}<br>`);
+        //     }
+        // };
+
+        // userInfo.intro();
+        // document.write(userInfo.username);
+        // document.write(userInfo.email);
+        // document.write(userInfo.profileImg);
+
+        // --------------------------------------------------------------
+
+        // id는 유저의 고유의 명칭
+
+        // const user = {
+        //     id: 0,
+        //     username: "JavaScript",
+        //     email: "java@script.com",
+        //     profileImg: "js.jpg",
+        //     intro
+        // }
+
+        // ---------------------------------------------------------------------
+
+        // *문제2
+        // =>prompt를 사용하여 자기소개 출력
+        // =>객체, 메서드, this 활용
+
+        // ##출력결과##
+        // 이름: 이현아
+        // 주 언어: 영어
+        // 취미: 영어
+
+
+        // const name = prompt("당신의 이름를 입력하세요");
+        // const language = prompt("당신의 언어를 입력하세요");
+        // const hobby = prompt("당신의 취미를 입력하세요");
+        
+
+        // const user = {
+        //     id: 0,
+        //     name: name,
+        //     lan: language,
+        //     hobby: hobby,
+        //     userIntro: function(){
+        //         document.write(`이름:${this.name}<br>`)
+        //         document.write(`언어:${this.language}<br>`)
+        //         document.write(`취미:${this.hobby}<br>`)
+        //     }
+        // }
+
+        // user.userIntro();
+
+        // --------------------------------------------------------------------------------------
+
+        const userInfo = {
+            id: 0,
+            username: "test",
+            password: "123"
+        }
+
+        // *문제3
+        // 위 객체를 이용하여 로그인 구현
+
+        // =>입력한 값이 저장된 아이디랑 다르면 아이디 틀림
+        // =>입력한 값이 저장된 패스웓랑 다르면 패스워드랑 틀림
+        // =>둘다 맞으면 로그인 되었습니다 라고 출력
+
+            // 로그인 하려면 if문쓰기
+
+        const id = Number(prompt("아이디를 입력해주세요"));
+        // const pw = Number(prompt("비밀번호를 입력해주세요"));
+
+        if(username === "test"){
+            prompt("비밀번호를 입력해주세요")
+        }else {
+            alert("아이디가 다릅니다.")
+        }
+
+        // 갖고 놀아보자아아아아아아 할 수 있다아아아아아
+        
+
+    
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
