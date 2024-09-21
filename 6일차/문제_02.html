@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+
+        // const userInfo = {
+        //     id: 0,
+        //     username: "test",
+        //     password: "123"
+        // }
+
+        // *문제3
+        // 위 객체를 이용하여 로그인 구현
+
+        // =>입력한 값이 저장된 아이디랑 다르면 아이디 틀림
+        // =>입력한 값이 저장된 패스웓랑 다르면 패스워드랑 틀림
+        // =>둘다 맞으면 로그인 되었습니다 라고 출력
+
+        // function login(id, pw){
+        //   if(id === userInfo.username && pw === userInfo.password){
+        //     document.write(`${userInfo.username}님 반갑습니다😍 <br>`);
+        //   }else if(id !== userInfo.username){
+        //     document.write("아이디가 다릅니다." + "<br>");
+        //   }else if(pw !== userInfo.password){
+        //     document.write("패스워드가 다릅니다." + "<br>");
+        //   }else{
+        //     document.write("다시입력해주세요" + "<br>");
+        //   }
+        // }
+
+        // login("test", "123dd");
+        // login("test", "123");
+        // login("testd", "123");
+
+        // ---------------------------------------------------------------------------------------
+
+        
+        // const userName = prompt("아이디를 입력하세요.");
+        // const userPw = prompt("아이디를 입력하세요.");
+
+        const userInfo = {
+            id: 0,
+            username: "test",
+            password: "123",
+            login: function(userName, userPw){
+              if(userName === this.username && userPw === this.password){
+                document.write(`${this.username}님 환영합니다! <br>`);
+              }else if(userName !== this.username && userPw === this.password){
+                document.write("아이디가 다릅니다." + "<br>");
+              }else if(userName === this.username && userPw !== this.password){
+                document.write("비밀번호가 다릅니다." + "<br>")
+              }else{
+                document.write("다시 입력하세요!" + "<br>")
+              }
+            }
+        }
+
+        userInfo.login("test", "123");
+        userInfo.login("test3", "123");
+        userInfo.login("test", "123d");
+        userInfo.login("testd", "123d");
+
+
+
+
+
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
