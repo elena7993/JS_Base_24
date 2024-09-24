@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+
+        // 1.바디안에 a태그 만들기
+        // 2.텍스트 네이버바로가기
+
+        // =>createElment, 
+        // =>append로 추가
+        
+
+        // const bodyEl = document.querySelector("body");
+        // const aEl = document.createElement('a');
+        // =>태그만!! 넣어!! 
+
+        // bodyEl.append(aEl);
+
+        // aEl.innerHTML = "네이버 바로가기";
+
+        // const bodyEl = document.querySelector("body");
+        // const boxEl = document.createElement("div");
+
+        // bodyEl.innerHTML = "<a href = 'https://www.naver.com'>네이버 바로가기</a>"
+
+        // bodyEl.append(boxEl);
+
+        // const bodyEl = document.querySelector("body");
+        // const boxEl = document.createElement("div");
+
+        // bodyEl.innerHTML = "<a href = 'https://www.naver.com'>네이버 바로가기</a>"
+        // document.querySelector("body").append(boxEl);
+
+        // document.body.append(boxEl);
+
+        // =>body는 쿼리셀렉터 없이 선택가능 
+
+
+        // *CRUD (Create Read Update Delete)
+        // 앱에 필요한 주요 요소들
+
+
+        const bodyEl = document.querySelector("body");
+        const boxEl = document.createElement("div");
+
+        bodyEl.innerHTML = '<a href = "https://www.naver.com">네이버 바로가기</a>'
+        document.querySelector("body").append(boxEl);
+
+
+    </script>
+
+</body>
+</html>
