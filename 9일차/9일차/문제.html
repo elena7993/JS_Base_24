@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con_wrap{
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 100px auto;
+        }
+
+        .con{
+            width: 120px;
+            height: 120px;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        @keyframes ani {
+            0%{
+                transform: scale(1);
+            }            
+
+            50%{
+                transform: scale(0.5);
+            }    
+
+            75%{
+                transform: scale(1.2);
+            }    
+
+            100%{
+                border-top-left-radius: 0;
+                transform: scale(1);
+            }    
+
+        }
+
+        .active{
+            animation: ani 1s 1 forwards;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="con_wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+    </div>
+
+
+    <script>
+
+        // const boxEl = document.querySelectorAll(`.con`);
+
+        // const clickHandler01 = () => {
+        //     boxEl[0].classList.toggle(`active`);
+        // }
+
+        // const clickHandler02 = () => {
+        //     boxEl[1].classList.toggle(`active`);
+        // }
+
+        // const clickHandler03 = () => {
+        //     boxEl[2].classList.toggle(`active`);
+        // }
+
+        // // console.log(boxEl[0]);
+
+        // boxEl[0].addEventListener("click", clickHandler01);
+        // boxEl[1].addEventListener("click", clickHandler02);
+        // boxEl[2].addEventListener("click", clickHandler03);
+
+
+        // -------------------풀이-----------------------
+
+        const conAll = document.querySelectorAll(`.con`);
+
+        // conAll[0].addEventListener(`click`, ()=>{
+        //     conAll[0].classList.add(`active`);
+        // });
+        // conAll[1].addEventListener(`click`, ()=>{
+        //     conAll[1].classList.add(`active`);
+        // });
+        // conAll[2].addEventListener(`click`, ()=>{
+        //     conAll[2].classList.add(`active`);
+        // });
+
+        // ----------------------위에는 구린버전 / 아래는 좋은버전--------------------
+
+        for(let i = 0; i <conAll.length; i++){
+            conAll[i].addEventListener(`click`,() => {
+                conAll[i].classList.add(`active`);
+            })
+        }
+
+
+        // -------------------풀이-----------------------
+    </script>
+    
+</body>
+</html>

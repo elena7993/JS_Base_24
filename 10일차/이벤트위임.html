@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트위임</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con_wrap{
+            max-width: 1400px;
+            width: 100%;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .con{
+            width: 32%;
+            height: 500px;
+            background-color: pink;
+            font-size: 50px;
+            transition: 0.5s;
+        }
+
+        .active{
+            border-radius: 50%;
+            background-color: teal;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="con_wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+    </div>
+
+    <script>
+
+        // const conAll = document.querySelectorAll(`.con`);
+
+        // conAll[0].addEventListener(`click`,() => {
+        //     conAll[0].classList.add(`active`);
+        // });
+
+        // for(let i = 0; i < conAll.length; i++ ){
+        //     conAll[i].addEventListener(`click`,() => {
+        //     conAll[i].classList.add(`active`);
+        //     });
+        // }
+
+        // *이벤트 위임
+        // =>부모에게 이벤트를 적용시킴
+        // =>자식이 필요하면 이벤트가 설정됨
+
+        // const conWrapEl = document.querySelector(`.con_wrap`);
+
+        // const clickHandler = (e) => {
+            // console.log(e.target);
+            // e.target.classList.add(`active`);
+            // *문제
+            // 부모를 제외하고 클래스가 추가되길 원함
+
+        //     if(e.target.classList.contains(`con`)){
+        //         e.target.classList.toggle(`active`);
+        //     }else{
+        //         e.target.classList.remove(`active`);
+        //     }
+
+        // }
+
+        // conWrapEl.addEventListener(`click`, clickHandler);
+
+        // *이벤트
+        // 1. 컨텐츠를 클릭하면 active 클래스가 추가되길 원함
+        // =>이벤트 위임
+        // =>이벤트는 부모를 선택해야됨
+        // =>선택된 부모에게 클릭 이벤트를 적용함
+        // =>클릭한 엘리먼트 알아오기 (e.target)
+        // =>클릭한 엘리먼트가 con라면 클래스를 추가해줌
+
+        const conWrapEl = document.querySelector(`.con_wrap`);
+
+        const handleClick = (e) => {
+            if(e.target.classList.contains(`con`)){
+                e.target.classList.toggle(`active`);
+            }
+        }
+
+        conWrapEl.addEventListener(`click`, handleClick)
+
+    </script>
+
+
+</body>
+</html>

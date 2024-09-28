@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+        <h2>현재시간</h2>
+        <div class="clock">00:00:00</div>
+
+
+    <!-- *문제
+    document.write를 이용하여 전자시계 만들기 -->
+
+    <script>
+
+        // *String()
+        // =>숫자 타입을 문자 타입으로 변경
+
+        // *padStart(개수, 값)
+        // =>문자 타입만 사용 가능
+        // =>이 문자열의 시작 부분에 다른 문자열을 채움
+
+        const clockEl = document.querySelector(`.clock`);
+
+
+        const timeHandler = () => {
+            const date = new Date();
+            const hour = String(date.getHours()).padStart(2,"0");
+            const min = String(date.getMinutes()).padStart(2,"0");
+            const sec = String(date.getSeconds()).padStart(2,"0");
+
+            // clockEl.innerText = `${hour} : ${min} : ${sec}`;
+            // console.log(clockEl.innerText=`${hour}`);
+
+            if(clockEl.innerText=`${hour}` < 12){
+                clockEl.innerText = `오전 ${hour}시 ${min}분 ${sec}초`;
+            }else{
+                clockEl.innerText = `오후 ${hour-12}시 ${min}분 ${sec}초`;
+            }
+        }
+
+        timeHandler();
+        // =>setInterval함수로 1초 뒤에 시간이 지정되므로
+        // 1초 뒤가 아닌 함수를 바로 호출해줘서 바로 시간이 출력되게 만들어줌
+
+        setInterval(timeHandler, 1000);
+
+
+    </script>
+    
+</body>
+</html>
