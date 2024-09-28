@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // *문제
+        // =>배열 생성 -> 배열 내부에 객체 4개 생성
+        // =>객체 내부에서는 고유값, 아이디, 이메일, 프사
+        // =>배열에 저장된 4명의 유저를 브라우저에 출력하기(반복문사용)
+
+        // const userInfo = {
+        //     id: 0,
+        //     username: "elena",
+        //     useremail: "js@gmail.com",
+        //     profileimg: "profile_img",
+        //     login: function(){
+                
+        //     }
+        // }
+
+        // const userInfo = [user_1, user_2, user_3, user_4];
+
+        const user_1 = {
+            id: 0,
+            username: "elena",
+            useremail: "elena@gmail.com",
+            userprofile: "pic_1.jpg",
+            intro: function(){
+                document.write(`${this.id}번째 유저 <br>`);
+                document.write(`id: ${this.username} <br>`);
+                document.write(`이메일: ${this.useremail}<br>`);
+                document.write(`프사: ${this.userprofile} <br>`);
+            }
+        }
+
+        const user_2 = {
+            id: 1,
+            username: "sam",
+            useremail: "sam@gmail.com",
+            userprofile: "pic_2.jpg",
+            intro_1: function(){
+                document.write(`${this.id}번째 유저 <br>`);
+                document.write(`id: ${this.username} <br>`);
+                document.write(`이메일: ${this.useremail}<br>`);
+                document.write(`프사: ${this.userprofile} <br>`);
+            }
+        }
+
+        const user_3 = {
+            id: 2,
+            username: "naya",
+            useremail: "naya@gmail.com",
+            userprofile: "pic_3.jpg",
+            intro_2: function(){
+                document.write(`${this.id}번째 유저 <br>`);
+                document.write(`id: ${this.username} <br>`);
+                document.write(`이메일: ${this.useremail}<br>`);
+                document.write(`프사: ${this.userprofile} <br>`);
+            }
+        }
+
+        const user_4 = {
+            id: 3,
+            username: "bettie",
+            useremail: "bettie@gmail.com",
+            userprofile: "pic_4.jpg",
+            intro_3: function(){
+                document.write(`${this.id}번째 유저 <br>`);
+                document.write(`id: ${this.username} <br>`);
+                document.write(`이메일: ${this.useremail}<br>`);
+                document.write(`프사: ${this.userprofile} <br>`);
+            }
+        }
+
+        user_1.intro();
+        user_2.intro_1();
+        user_3.intro_2();
+        user_4.intro_3();
+
+        
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

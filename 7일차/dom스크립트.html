@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+
+    <script>
+
+        // =>뭐든지 끝까지 해보자 그리고 나서 선택하자!!! 
+
+        // *Dom script(돔 스크립트)
+        // =>Document Object Model의 약자
+        // =>브라우저에 이쁘게 꾸미기 위한 수단
+        // =>앱, 혹은 사이트를 수정, 추가, 삭제, 변형 등 처리할 수 있음 
+
+        // *querySelector("선택자명") 
+        // =>query 는 요청이라는 뜻
+        // =>html 태그를 선택할 때 사용가능하며, 
+        // 아이디, 태그, 클래스, 구조, 자식 선택자 등 css선택자와
+        // 동일하게 선택할 수 있음
+
+        // =>같은이름의 클래스가 다수 있을 경우, 첫번째 엘리먼트만 선택됨
+
+        // const boxEl_1 = document.querySelector(".box:nth-child(1)");
+        // const boxEl_2 = document.querySelector(".box:nth-child(2)");
+        // const boxEl_3 = document.querySelector(".box:nth-child(3)");
+        // console.log(boxEl_1);
+        // console.log(boxEl_2);
+        // console.log(boxEl_3);
+
+        // *querySelectorAll("선택자")
+        // =>querySelector처럼 선택자를 선택하지만
+        // 같은 이름의 클래스를 한번에 선택할 수 있음
+        // =>선택한 선택자는 배열로 반환
+
+        const boxEls = document.querySelectorAll(".box");
+        console.log(boxEls[2]);
+        console.log(boxEls[1]);
+        console.log(boxEls[0]);
+
+        // =>여러개가 선택가능하고 배열로 반환한다 
+        // =>따라서 클래스를 다시 선택하고 싶을 때는 []를 써서 잡는다!
+
+        
+
+
+
+    </script>
+
+</body>
+</html>

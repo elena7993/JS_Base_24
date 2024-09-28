@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    
+    <script>
+
+        // *문제
+        // =>innerHTMl 이용하여
+        // => .con자식으로 h3태그 만들기
+
+        // 1.con 전부 선택하고
+        // 2..con 자식만들기: h3
+        // 3. .con 엘리먼트 안에 각각 h태그 추가하기
+
+        // const conAll = document.querySelectorAll(".con");
+        // console.log(conAll);
+        
+        // console.log(conAll[0]);
+        // =>콘솔로 찍으면서 확인하기
+
+        // conAll[0].innerHTML = "<h3>1</h3>";
+        // conAll[1].innerHTML = "<h3>2</h3>";
+        // conAll[2].innerHTML = "<h3>3</h3>";
+        // =>배열!!! 
+        // =>이렇게 만들고 나서 코드 줄여보기 
+        // =>무엇을 줄일지 판단하기 
+        // =>중복되는게 무엇인지 확인하고 반복문 
+
+        // for(let i = 0; i < conAll.length; i++){
+        //     conAll[i].innerHTML = `<h3>${i + 1}</h3>`;
+        // }
+
+        const conAll_1 = document.querySelectorAll(".con");
+        // console.log(conAll_1); 
+
+        for(let i = 0; i < conAll_1.length; i++){
+            conAll_1[i].innerHTML = `<h3>${i + 1}</h3>`
+        };
+
+
+
+    </script>
+
+</body>
+</html>
