@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .practice_2{
+      width: 100%;
+      position: relative;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      margin-top: 200px;
+      
+    }
+
+    .toggle{
+      width: 80px;
+      height: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 50px;
+      position: relative;
+    }
+
+    .circle{
+      width: 25px;
+      height: 25px;
+      background-color: gainsboro;
+      border-radius: 50%;
+      position: absolute;
+      top: 2.5px;
+      left: 2.5px;
+    }
+
+    .active{
+      background-color: rgb(65, 255, 65);
+    }
+
+    .toggle.active .circle{
+      left: 52.5px;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <div class="practice_2">
+    <div class="toggle">
+      <div class="circle"></div>
+    </div>
+  </div>
+  
+  <!-- *문제
+  =>토글 안에서 자식인 circle만 클릭 이벤특가 발생해야 하며
+  =>circle을 클릭 시 부모인 toggle의 background-color:rgb(65, 255, 65)로 바뀌고
+  =>circle은 left: 52.5px 이라는 이벤트가 발생한다
+
+  *힌트
+  사용되는 내용
+  =>e.target.classList.contains('circle')
+  e.target.parentNode.classList.toggle('active')
+
+  =>css: .toggle.active .circle -->
+
+  <script>
+
+    const circleEl = document.querySelector('circle');
+    const toggleEl = document.querySelector('toggle');
+
+    // const togglehandler = (e) => {
+    //   if(e.target.classList.contains('circle')){
+    //   e.target.parentNode.classList.toggle('active')
+    //   };
+    // };
+    
+    // circleEl.addEventListener('click', togglehandler);
+
+    toggleEl.addEventListener('cilck', (e) => {
+      if(e.target.classList.contains('circle')){
+      e.target.parentNode.classList.toggle('active')
+      };
+    });
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .practice_1{
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+  </style>
+
+</head>
+<body>
+  
+  <div class="practice_1">
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+  </div>
+
+  <script>
+
+    const redEl = document.querySelector('.red');
+    const greenEl = document.querySelector('.green');
+    const blueEl = document.querySelector('.blue');
+
+    // console.log(blueEl);
+
+    redEl.style.width = "100px";
+    redEl.style.height = "100px";
+    redEl.style.backgroundColor = "red";
+
+    greenEl.style.width = "200px";
+    greenEl.style.height = "200px";
+    greenEl.style.backgroundColor = "green";
+
+    blueEl.style.width = "300px";
+    blueEl.style.height = "300px";
+    blueEl.style.backgroundColor = "blue";
+    
+
+  </script>
+
+</body>
+</html>
