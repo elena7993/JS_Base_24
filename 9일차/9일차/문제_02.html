@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .con_wrap{
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    .con{
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+    }
+
+    .active{
+      background-color: salmon;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="con_wrap">
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+  </div>
+
+  <!-- *문제
+  세개의 박스가 있고, 
+  각 박스를 클릭하면 salmon색으로 바뀐다, 
+  다시 클릭하면 원래 색깔로 돌아간다. -->
+
+  <script>
+
+    // const conEl = document.querySelector('.con');
+
+    // const clickHandler = () => {
+    //   conEl.classList.toggle('active');
+    // };
+
+    // conEl.addEventListener('click', clickHandler);
+
+    // const conEl = document.querySelectorAll('.con');
+
+    // for(let i = 0; i < conEl.length; i++){
+    //   const clickHandler = () => {
+    //     conEl[i].classList.toggle('active');
+    //   };
+    //   conEl[i].addEventListener('click', clickHandler);
+    // };
+    
+    const conEl = document.querySelectorAll('.con');
+
+    for(let i = 0; i < conEl.length; i++){
+      const clickhandler = () => {
+        conEl[i].classList.toggle('active');
+      };
+      conEl[i].addEventListener('click', clickhandler);
+    };
+
+
+
+  </script>
+  
+</body>
+</html>

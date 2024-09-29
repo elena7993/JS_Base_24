@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .like{
+            width: 130px;
+            padding: 5px 10px;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="like">
+
+    <!-- <i class="fa-regular fa-thumbs-up"></i> -->
+    <span>좋아요</span>
+    <!-- <span class="number">0</span> -->
+
+    <span class="number">0</span>
+
+</div>
+
+  <!-- *문제
+  좋아요 박스 안에 "0개"가 있고 
+  박스를 클릭하면 좋아요 숫자가 1씩 올라간다 -->
+
+  <script>
+
+    const likeEl = document.querySelector('.like');
+    const numEl = document.querySelector('.number');
+
+    let i = 0;
+
+    const clickHandler = () => {
+      numEl.innerText = i++ + "개";
+    };
+
+    likeEl.addEventListener('click', clickHandler);
+
+  </script>
+  
+</body>
+</html>

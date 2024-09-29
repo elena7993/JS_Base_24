@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .con_wrap{
+      max-width: 1400px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    .con{
+      width: 400px;
+      height: 400px;
+      background-color: teal;
+      transition: 0.5s;
+    }
+
+    .active{
+      background-color: salmon;
+      transform: rotate(180deg);
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="con_wrap">
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+  </div>
+
+  <!-- *문제
+  400*400 세개의 박스가 있고, 
+  각 박스를 클릭하면  toggle 방식으로 
+  180도 회전하고 돌아오는 동시에 색상도 
+  salmon색도 바뀌었다 돌아온다. -->
+
+  <script>
+
+    const conEl = document.querySelectorAll('.con');
+
+
+    for(let i = 0; i < conEl.length; i++){
+      const togglehandler = () => {
+        conEl[i].classList.toggle('active');
+      };
+      conEl[i].addEventListener('click', togglehandler);
+      console.log(conEl[1]);
+
+    };
+    
+  </script>
+  
+</body>
+</html>
