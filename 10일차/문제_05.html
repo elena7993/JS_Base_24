@@ -69,22 +69,25 @@
 
   <script>
 
-    const circleEl = document.querySelector('circle');
-    const toggleEl = document.querySelector('toggle');
+    // const circleEl = document.querySelector('circle');
+    // const toggleEl = document.querySelector('toggle');
 
-    // const togglehandler = (e) => {
+    const pracEl = document.querySelector('.practice_2');
+
+    const togglehandler = (e) => {
+      if(e.target.classList.contains('circle')){
+      e.target.parentNode.classList.toggle('active')
+      }
+      console.log(pracEl);
+    };
+    
+    pracEl.addEventListener('click', togglehandler);
+
+    // pracEl.addEventListener('cilck', (e) => {
     //   if(e.target.classList.contains('circle')){
     //   e.target.parentNode.classList.toggle('active')
     //   };
-    // };
-    
-    // circleEl.addEventListener('click', togglehandler);
-
-    toggleEl.addEventListener('cilck', (e) => {
-      if(e.target.classList.contains('circle')){
-      e.target.parentNode.classList.toggle('active')
-      };
-    });
+    // });
 
 
   </script>

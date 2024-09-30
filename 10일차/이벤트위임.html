@@ -97,6 +97,8 @@
 
         // => e(매개변수).target = 마우스 커서가 가리키는 곳
         // => contains 는 'con'을 포함하고 있다는 뜻
+        // =>current target은 이벤트가 일어나는 부모요소까지 포함함
+        // =>이벤트가 등록된 요소
 
         conWrapEl.addEventListener(`click`, handleClick)
 
