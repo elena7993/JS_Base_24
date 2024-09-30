@@ -28,10 +28,11 @@
             </div>
 
             <div class="footer">
-                <div class="icon">
+                <div class="like">
                     <i class="fa-regular fa-heart"></i>
 
                     <!-- <i class="fa-solid fa-heart"></i> -->
+                    <span class="number">0개</span>
                 </div>
             </div>
 
@@ -48,15 +49,16 @@
             </div>
 
             <div class="main">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnh2cMhldtWmNVrttzcHh_Hxb8N0DIG3tJLFHXhzpAXHvQKjBJJS0BynbjsVX4vidipxc&usqp=CAU" 
+                <img src="https://news.yale.edu/sites/default/files/styles/featured_media/public/ynews-salty-oceans_1.png?itok=bOjaEkcu&c=a75e254fe1da31f2732f6b0d7bce1413" 
                      alt="bg_2">
             </div>
 
             <div class="footer">
-                <div class="icon">
+                <div class="like">
                     <i class="fa-regular fa-heart"></i>
 
                     <!-- <i class="fa-solid fa-heart"></i> -->
+                    <span class="number">0개</span>
                 </div>
             </div>
 
@@ -73,20 +75,112 @@
             </div>
 
             <div class="main">
-                <img src="" alt="">
+                <img src="https://oceanpanel.org/wp-content/uploads/2022/06/AdobeStock_240810340-scaled.jpeg" 
+                     alt="bg_3">
             </div>
 
             <div class="footer">
-                <div class="icon">
+                <div class="like">
                     <i class="fa-regular fa-heart"></i>
 
                     <!-- <i class="fa-solid fa-heart"></i> -->
+                     <span class="number">0개</span>
                 </div>
             </div>
 
         </div>
 
     </div>
+
+    <script>
+
+    // const likeEl = document.querySelector('.like');
+    // const numEl = document.querySelector('.number');
+
+    // let i = 0;
+
+    // const clickHandler = () => {
+    //     numEl.innerText = i++ + "개"
+    // };
+
+    // likeEl.addEventListener('click', clickHandler);
+
+    // --------------------------------------------------
+
+    // const likeEl = document.querySelector('.like');
+    // const numEl = document.querySelector('.number');
+
+    // let i = 0;
+
+    // const clickHandler = (e) => {
+
+    //    e.target.classList.toggle('fa-regular');
+    //    e.target.classList.toggle('fa-solid');
+    //    e.target.classList.toggle('active');
+
+    //    if(e.target.classList.contains('fa-regular')){
+    //     i--;
+    //    }else{
+    //     i++;
+    //    };
+    //    numEl.innerText = i + "개";
+    // };
+
+    // likeEl.addEventListener('click', clickHandler);
+
+    // ----------------------------------------------------
+
+    // const conEl = document.querySelectorAll('.con');
+    // console.log(conEl);
+
+
+    // const likeEl = document.querySelectorAll('.like');
+    // const numEl = document.querySelectorAll('.number');
+
+    // let i = 0;
+
+    // const toggleHandler = (e) => {
+    //     e.target.classList.toggle('fa-regular');
+    //     e.target.classList.toggle('fa-solid');
+    //     e.target.classList.toggle('active');
+
+    //     if(e.target.classList.contains('fa-regular')){
+    //         i--;
+    //     }else{
+    //         i++
+    //     };
+
+    //     numEl.innerText = i + "개";
+    // };
+
+    // likeEl.addEventListener('click', toggleHandler);
+
+    // --------------------------------------------------------
+
+    const likeEl = document.querySelectorAll('.like');
+    const numEl = document.querySelectorAll('.number');
+
+    for(let i = 0; i < likeEl.length; i++){
+        let result = 0;
+
+        likeEl[i].addEventListener('click', (e) => {
+            // const icon = e.target.querySelector('i');
+            const icon = e.currentTarget.querySelector('i');
+            icon.classList.toggle('fa-regular');
+            icon.classList.toggle('fa-solid');
+            icon.classList.toggle('active');
+
+            if(icon.classList.contains('fa-solid')) {
+                result++;
+            }else{
+                result--;
+            }
+            numEl[i].innerText = result + "개"
+        });
+    };
+    
+
+    </script>
     
 </body>
 </html>
