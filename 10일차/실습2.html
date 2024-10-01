@@ -99,11 +99,14 @@
             // =>div 태그 제작
             menuEl.classList.add(`menu`);
             // =>클래스 추가
-            menuEl.innerHTML = `<a href="${menus[i].url}">${menus[i].title}</a>`
+            menuEl.innerHTML = `<a href="${menus[i].url}">${menus[i].title}</a> 
+            <div class = "box">나이스냥냥이</div>`
             // =>제작한 메뉴 태그에 a태그 링크와 타이틀 추가
 
             menuWrapEl.append(menuEl);
-            // =>부모에게 제작한 메뉴 추가하기
+            // =>부모에게 제작한 메뉴 추가하기(마지막 자식으로 추가된다)
+
+            // console.log(menuEl);
         }
     </script>
     

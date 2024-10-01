@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+  
+  <style>
+
+  .wrap{
+      width: 100%;
+  }
+
+  .con{
+      width: 100%;
+      max-width: 500px;
+      height: 400px;
+      border: 1px solid lightgrey;
+      border-radius: 10px;
+      margin: 0 auto;
+      margin-bottom: 50px;
+  }
+
+  .head{
+      height: 75px;
+      display: flex;
+      align-items: center;
+  }
+
+  .profile_img{
+      width: 50px;
+      height: 50px;
+      background-color: lightblue;
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .main{
+      width: 500px;
+      height: 250px;
+      overflow: hidden;
+  }
+
+  .footer{
+    display: flex;
+  }
+
+  .fa-regular,
+  .fa-solid{
+    margin: 30px 5px 0 20px;
+    transition: 0.2s ease;
+  }
+
+  .like_text{
+    margin-top: 26px;
+  }
+
+  .active{
+    color: red;
+  }
+
+
+  </style>
+
+</head>
+<body>
+
+  <div class="wrap">
+
+  </div>
+
+  <script>
+
+  const users = [
+    {
+      id: 0,
+      name: "Jasmine",
+      profileImg: "https://www.siminsori.com/news/photo/201909/217173_66073_1554.jpg",
+      feedImg: "https://mblogthumb-phinf.pstatic.net/MjAxOTA1MjZfNDcg/MDAxNTU4ODc1ODg5MDUx.j6cKMiXjkMP8b9dX2f-TanStLi1UW9ZuKqQbLecIbm4g.T0ulQJIXPpQC0wZROFrooD2-HaBV-T0SBu5T-JB2xeQg.JPEG.rksekql/al_3287327847437834929843.jpg?type=w800",
+      like: 122
+    },
+    {
+      id: 1,
+      name: "sam",
+      profileImg: "https://t1.daumcdn.net/cfile/tistory/998E5E3A5D19FA5C07",
+      feedImg: "https://mblogthumb-phinf.pstatic.net/MjAxOTA1MjZfNDEg/MDAxNTU4ODYzMjcyNzg4.vSXhdsl4o7fW-WgL_Bli83_NOxbErHS2i8Zb4fe1gEgg.Qjvl8uGv6bp6ZEFoNi8lcRgYHpLf_5d7h1CeVstTvuQg.JPEG.gambol75/5.jpg?type=w800",
+      like: 614
+    },
+    {
+      id: 2,
+      name: "Jinn",
+      profileImg: "https://cdn.ggilbo.com/news/photo/201907/681557_523373_3238.png",
+      feedImg: "https://artinsight.co.kr/data/tmp/1907/0b6afee6696a2ed2a202790082e69c5b_JQ3YNRSzKBWsn5.jpg",
+      like: 164
+    }
+  ];
+
+  
+  const wrapEl = document.querySelector('.wrap');
+  
+  for(let i =0; i < users.length; i++){
+    const conEl = document.createElement('div');
+    conEl.classList.add('con');
+    wrapEl.append(conEl);
+
+    const headEl = document.createElement('div');
+    headEl.classList.add('head');
+    conEl.append(headEl);
+    headEl.innerHTML = `<img class="profile_img" src="${users[i].profileImg}" alt="profile_img"> <div>${users[i].name}</div>`;
+
+    const mainEl = document.createElement('div');
+    mainEl.classList.add('main');
+    conEl.append(mainEl);
+    mainEl.innerHTML = `<img src="${users[i].feedImg}" alt="feed_img1">`;
+
+    const footerEl = document.createElement('div');
+    footerEl.classList.add('footer');
+    conEl.append(footerEl);
+    footerEl.innerHTML = `<i class="fa-regular fa-heart"></i> <div class="like_text">좋아요 ${users[i].like}개</div>`;
+
+    
+    // const heartEl = document.querySelector('i');
+    // const likeText = document.querySelector('.like_text');
+    const heartEl = footerEl.querySelector('i');
+    const likeText = footerEl.querySelector('.like_text');
+
+    const toggleHandler = () => {
+      if(heartEl.classList.contains('fa-regular')){
+        users[i].like++
+      }else{
+        users[i].like--
+      };
+
+      heartEl.classList.toggle('fa-solid');
+      heartEl.classList.toggle('fa-regular');
+      heartEl.classList.toggle('active');
+      likeText.innerText = `좋아요 ${users[i].like}개`;
+    }
+
+    heartEl.addEventListener('click', toggleHandler);
+
+  };
+
+
+  </script>
+  
+</body>
+</html>

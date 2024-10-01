@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+  <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    }
+
+ul, li{
+    list-style: none;
+    }
+
+img{
+    width: 100%;
+    display: block;
+    }
+
+a{
+    color: black;
+    text-decoration: none;
+  }
+.con{
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.header{
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.profile{
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.main{
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.like i{
+    font-size: 20px;
+    margin: 25px 5px 0 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+  </div>
+
+  <script>
+
+const users = [
+  {
+    id: 0,
+    name: "Elena",
+    profileImg: "https://bff-images.bemypet.kr/media/medias/all/927-image_picker5758318479410659919.jpg",
+    feedImg: "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
+    like: 122
+  },
+  {
+    id: 1,
+    name: "Sam",
+    profileImg: "",
+    feedImg: "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
+    like: 614
+  },
+  {
+    id: 2,
+    name: "Naya",
+    profileImg: "",
+    feedImg: "https://images.unsplash.com/photo-1535320404287-416e2c6d2b41?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
+    like: 164
+  }
+];
+
+
+    const wrapEl = document.querySelector('.wrap');
+
+    for(let i = 0; i < users.length; i++){
+
+
+      const conEl = document.createElement('div');
+      conEl.classList.add('con');
+      wrapEl.append(conEl);
+
+      const headerEl = document.createElement('div');
+      headerEl.classList.add('header');
+      conEl.append(headerEl);
+      headerEl.innerHTML = `<img src="${users[i].profileImg}" alt="profileImg"> <div>${users[i].name}</div>`;
+      // users[i].profileImg.style.width = "20px";
+      // users[i].profileImg.style.height = "20px";
+      // users[i].profileImg.style.borderRadius = "50%";
+
+      const mainEl = document.createElement("div");
+      mainEl.classList.add('main');
+      conEl.append(mainEl);
+      mainEl.innerHTML = `<img src="${users[i].feedImg}" alt="feedImg">`;
+
+      const footerEl = document.createElement('div');
+      footerEl.classList.add('footer');
+      conEl.append(footerEl);
+      footerEl.innerHTML = `<i class="fa-regular fa-heart"></i> <div class = "like_text"> 좋아요 ${users[i].like}개</div>`;
+
+      const heartEl = footerEl.querySelector('i');
+      const likeTextEl = footerEl.querySelector('.like_text'); 
+
+
+
+      const toggleHandler = () =>{
+        if(heartEl.classList.contains('fa-regular')){
+          users[i].like++;
+        }else{
+          users[i].like--;
+        };
+
+        heartEl.classList.toggle('fa-solid');
+        heartEl.classList.toggle('fa-regular');
+        likeTextEl.innerText = `좋아요 ${users[i].like} 개`;
+      };
+
+      heartEl.addEventListener('click', toggleHandler);
+
+    };
+
+  </script>
+  
+</body>
+</html>
