@@ -53,3 +53,51 @@
   color: red;
 }
 
+nav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav_wrap{
+  position: relative;
+}
+
+.hamburger a{
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid brown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.line{
+  width: 30px;
+  height: 1.5px;
+  background-color:#000;
+}
+
+.drop_down{
+  /* display: none; */
+  position: absolute;
+  top: 3px;
+  right: 70px;
+  opacity: 0;
+  height: 70px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+li{
+  margin: 5px 10px 20px 20px;
+}
+
+.drop_down.active{
+  opacity: 1;
+  height: auto;
+}
+

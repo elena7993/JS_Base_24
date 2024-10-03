@@ -11,6 +11,24 @@
 
   <div class="wrap">
 
+    <nav class="nav_wrap">
+
+      <div class="hamburger">  
+        <a href="#">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </a>
+      </div>
+  
+      <ul class="drop_down">
+        <li><a href="#">메뉴_1</a></li>
+        <li><a href="#">메뉴_2</a></li>
+        <li><a href="#">메뉴_3</a></li>
+      </ul>
+  
+    </nav>
+
   </div>
 
   <script>
@@ -82,6 +100,27 @@
       heartEl.addEventListener('click', toggleHandler);
 
     };
+    
+    // const navEl = document.querySelector('.nav_wrap')
+    const hamEl = document.querySelector('.hamburger');
+    const dropEl = document.querySelector('.drop_down');
+
+    // const toggleHandler = (e) => {
+    //   if(e.target.classList.contains('hamburger')){
+    //     e.target.classList.toggle('active')
+    //   };
+    // };
+
+    // hamEl.addEventListener('click', toggleHandler);
+
+    const toggleHandler = () => {
+      hamEl.classList.toggle('active');
+      dropEl.classList.toggle('active');
+    };
+
+    hamEl.addEventListener('click', toggleHandler);
+
+
 
   </script>
   
