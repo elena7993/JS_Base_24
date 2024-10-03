@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="wrap">
+
+  </div>
+
+  <script>
+
+    const users = [
+      {
+        id: 0,
+        name: "Gaonasi",
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKCu5b8sfXNy9P4Y3fAen9Gein77K5cQsbVw&s",
+        feedImg: "https://i.namu.wiki/i/GtNAvOsrHslCQTWWCSrmYbq64y2jHNOsQJ2ajXiunbrnTCRIUDGj6JM3-5IoVN8EzqqQFUEl60DR1lL7V0IQgw.webp",
+        like: 304
+      },
+      {
+        id: 1,
+        name: "Gaonasi8787",
+        profileImg: "https://mblogthumb-phinf.pstatic.net/MjAxODAzMjRfMTIy/MDAxNTIxOTAxMTA2OTky.3kpHQRdpOWMzTbrudzzFpTjFkbHWTTuXxKM5CJmewHkg.R3fAAwrL2X_SH4ou0NouwUzAOo7oEPOps3fVmbdaZIMg.JPEG.hodnog0101/The.Spiriting.Away.Of.Sen.And.Chihiro.2001.1080p.BluRay.5.1-AAC-JPN.ENG.KORDUB.3AUDIO.x264-Ikarus.mkv_20180324_225158.099.jpg?type=w800",
+        feedImg: "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2024%2F01%2Fhayao-miyazaki-explains-who-no-face-is-spirited-away-001.jpg?q=75&w=800&cbr=1&fit=max",
+        like: 178
+      },
+      {
+        id: 2,
+        name: "Gaonasi021",
+        profileImg: "https://ojsfile.ohmynews.com/STD_IMG_FILE/2016/0304/IE001931016_STD.jpg",
+        feedImg: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99F5FB475E0C84F214",
+        like: 233
+      },
+    ]
+
+    const wrapEl = document.querySelector('.wrap');
+
+    for(let i = 0; i < users.length; i++){
+
+      const conEl = document.createElement('div');
+      conEl.classList.add('con');
+      wrapEl.append(conEl);
+
+      const headEl = document.createElement('div');
+      headEl.classList.add('head');
+      conEl.append(headEl);
+      headEl.innerHTML = `<img class="profile_img" src="${users[i].profileImg}" alt="profile_img"> <div>${users[i].name}</div>`;
+
+      const mainEl = document.createElement('div');
+      mainEl.classList.add('main');
+      conEl.append(mainEl);
+      mainEl.innerHTML = `<img src="${users[i].feedImg}" alt="feed_img1">`;
+
+      const footerEl = document.createElement('div');
+      footerEl.classList.add('footer');
+      conEl.append(footerEl);
+      footerEl.innerHTML = `<i class="fa-regular fa-heart"></i> <div class="like_text">좋아요 ${users[i].like}개</div>`;
+
+      const heartEl = footerEl.querySelector('i');
+      const likeText = footerEl.querySelector('.like_text');
+
+      const toggleHandler = () => {
+        if(heartEl.classList.contains('fa-regular')){
+          users[i].like++
+        }else{
+          users[i].like--
+        };
+
+        heartEl.classList.toggle('fa-solid');
+        heartEl.classList.toggle('fa-regular');
+        heartEl.classList.toggle('active');
+        likeText.innerText = `좋아요 ${users[i].like}개`;
+      };
+
+
+      heartEl.addEventListener('click', toggleHandler);
+
+    };
+
+  </script>
+  
+</body>
+</html>
