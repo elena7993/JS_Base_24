@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+.swiper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
