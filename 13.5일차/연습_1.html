@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul, li{
+      list-style: none;
+    }
+
+    a{
+      color: #000;
+      text-decoration: none;
+    }
+
+    img{
+      width: 100%;
+      display: block;
+    }
+
+    button{
+      all: unset;
+    }
+
+    .wrap{
+      width: 100%;
+      height: 100vh;
+      /* 전체화면 높이 맞추기 위해서 추가 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .btn_wrap{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn{
+      width: 100px;
+      height: 50px;
+      border: 1px solid #1d1d1d;
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="wrap">
+
+    <div class="btn_wrap">
+      <button class="btn">추가</button>
+    </div>
+
+  </div>
+
+
+  <!-- div 태그 안에 "추가" 버튼이 하나 있고, 버튼을 클릭하면 div 내부에 새로운 버튼이 생성되도록 만들보자.
+  생성된 각 버튼에는 고유한 번호(예: "Button 1", "Button 2" 등)가 표시되게 하고, 각각의 버튼을 클릭하면 해당 버튼이 사라지도록 만들어보고
+  이벤트 위임을 사용해서 div 요소에 클릭 이벤트를 걸고, 각 버튼이 사라지는 동작을 구현해보자 -->
+  
+
+  <script src="js/main_1.js"></script>
+
+</body>
+</html>
