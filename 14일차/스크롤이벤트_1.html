@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style_2.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header>
+        <h3>Header</h3>
+    </header>
+
+    <section class="section_1">
+        <h3>section</h3>
+    </section>
+
+    <section class="section_2">
+
+        <h3 class="title">section title</h3>
+
+        <div class="con_wrap">
+            <div class="con"></div>
+            <div class="con"></div>
+            <div class="con"></div>
+        </div>
+
+        <section class="section_3">
+            <h3>section</h3>
+        </section>
+
+    </section>
+
+  <script>
+
+const headerEl = document.querySelector('header');
+const secEl_2 = document.querySelector('.section_2');
+const titleEl = document.querySelector('.title');
+const conAll = document.querySelectorAll('.con');
+
+const handleScroll = () => {
+    const pageY = window.pageYOffset; 
+    const secTop_2 = secEl_2.offsetTop;
+
+    if (pageY >= 300) {
+        headerEl.classList.add('header_active');
+    } else {
+        headerEl.classList.remove('header_active');
+    }
+
+    
+    if (pageY >= secTop_2 / 2) {
+        titleEl.classList.add('title_active');
+
+        for (let i = 0; i < conAll.length; i++) {
+            const conEl = conAll[i];
+            const conTop = conEl.offsetTop;
+
+            if (pageY >= conTop - window.innerHeight / 1.5) {
+                setTimeout(() => {
+                    conEl.classList.add('con_active');
+                }, i * 200);
+            } else {
+                conEl.classList.remove('con_active'); 
+            }
+        }
+    } else {
+        titleEl.classList.remove('title_active');
+
+       
+        for (let i = 0; i < conAll.length; i++) {
+            conAll[i].classList.remove('con_active');
+        }
+    }
+};
+
+window.addEventListener('scroll', handleScroll);
+
+
+  </script>
+  
+</body>
+</html>

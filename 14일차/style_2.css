@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  padding: 20px 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s, padding 0.5s;
+
+}
+
+section{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section h3{
+  font-size: 50px;
+}
+
+.section_1{
+  background-color: lightgrey;
+  transition: background-color 0.5s;
+}
+
+.header_active{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 30px;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.title_active{
+  transform: translateY(0);
+  opacity: 1;
+  
+}
+
+.con_wrap{
+  padding: 0 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.con{
+  width: 32%;
+  height: 500px;
+  background-color: lightgrey;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.5s, opacity 0.5s width 0.5s;
+}
+
+.con_active{
+  opacity: 1;
+  transform: translateY(0);
+  width: 50%;
+  /* width 늘어나야함 */
+}
+
+.section_2{
+  padding: 100px 0;
+  display: block;
+}
+
+.section_3{
+  height: 700px;
+  /* background-color: lightgray; */
+}
