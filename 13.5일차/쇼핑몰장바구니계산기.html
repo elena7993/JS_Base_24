@@ -22,58 +22,62 @@
       text-decoration: none;
     }
 
-    h1 {
-        text-align: center;
-        color: #333;
+    h1{
+      text-align: center;
+      color: #333;
+      margin-bottom: 50px;
     }
 
-    div {
-        margin-bottom: 20px;
+    div{
+      text-align: center;
+      margin-left: 50px;
+      margin-bottom: 20px;
     }
 
-    label {
-        font-weight: bold;
+    label{
+      font-weight: bold;
     }
 
     input[type="number"], input[type="text"] {
-        padding: 8px;
-        margin: 0 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 150px;
+      padding: 8px;
+      margin: 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 150px;
     }
 
-    button {
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+    button{
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: lightsalmon;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    button:hover {
-        background-color: #0056b3;
+    button:hover{
+      background-color: salmon;
     }
 
-    li {
-        background-color: #fff;
-        margin: 5px 0;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+    li{
+      background-color: #fff;
+      margin: 5px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    li:hover {
-        background-color: #f9f9f9;
+    li:hover{
+      background-color: #f9f9f9;
     }
 
-    p {
-        font-size: 18px;
-        font-weight: bold;
+    p{
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 50px;
     }
 
   </style>
@@ -81,7 +85,9 @@
 </head>
 <body>
 
-  <h1>쇼핑몰 장바구니 계산기</h1>
+  <div class="wrapper">
+
+    <h1>쇼핑몰 장바구니 계산기</h1>
     <div class="wrap_1">
         <label for="item-price">상품 가격 입력: </label>
         <input type="number" id="item-price" placeholder="가격을 입력하세요">
@@ -96,6 +102,9 @@
         <button id="apply-discount">할인 적용</button>
     </div>
     <p>총 합계: <span id="total-price">0</span> 원</p>
+
+  </div>
+
 
     <script src="js/main_2.js"></script>
   
