@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    width: 100px;
+    height: 100px;
+    border: 10px solid lightsalmon;
+    border-radius: 50%;
+    border-color: lightsalmon transparent transparent transparent;
+    animation: loading_ani 1s infinite;
+}
+
+@keyframes loading_ani {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* 단계별로 나누지 않은 이유는 시작했을 때 0도, 끝이 360도 이끼 때문에, 중간에 어떤 변화가 없기 때문 */
+
+.active{
+    display: none;
+}
+
+</style>
+
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="loading"></div>
+  </div>
+
+
+  <script>
+
+    const loading = document.querySelector('.loading');
+
+    const timeSet = () => {
+      loading.classList.add('active');
+    }
+    // setTimeout(실행할함수야, 시간)
+
+    setTimeout(timeSet, 3000);
+
+  </script>
+  
+</body>
+</html>
