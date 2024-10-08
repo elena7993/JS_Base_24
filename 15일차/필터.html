@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <script>
+
+        // const num = [1,2,3,4,5];
+
+        // num.filter((a) => console.log(a));
+        // 매개변수는 a는 배열안에있는 요소를 뜻함
+        // 따라라 배열안에있는 요소 전부가 다 찍힘
+
+        // const result = num.filter((a) => (a) !== 2)
+        // console.log(result);
+
+        const movies = [
+            {
+                id: 0,
+                title: "조커2",
+                desc: "조커 영화 입니다"
+            },
+            {
+                id: 1,
+                title: "보보보",
+                desc: "무적 코털 보보에요"
+            },
+            {
+                id: 2,
+                title: "따따베",
+                desc: "따끈따끈 베이커리에요"
+            }
+        ]
+
+        // *filter()
+        // =>배열의 내용을 가져와서 원하는 값을 필터하여 변환함
+        // =>배열이기 때문에 배열로 변환함
+
+        const result = movies.filter((a) => a.title === "보보보");
+        console.log(result);
+
+
+    
+    </script>
+    
+</body>
+</html>

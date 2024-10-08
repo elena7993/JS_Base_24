@@ -69,7 +69,7 @@ section h3{
 .con_active{
   opacity: 1;
   transform: translateY(0);
-  width: 50%;
+  width: 30%;
   /* width 늘어나야함 */
 }
 

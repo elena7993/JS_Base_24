@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form{
+            max-width: 450px;
+            width: 100%;
+            margin: 100px auto;
+            border: 1px solid lightgrey;
+            border-radius: 15px;
+            padding: 10px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form h3{
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- *문제
+    로그인 구현 -->
+
+    <form>
+        <h3>LOGIN</h3>
+        <input class="username" type="text" placeholder="ID">
+        <input class="password" type="text" placeholder="password">
+        <div class="errorMessage"></div>
+        <button>포그인</button>
+    </form>
+
+    <script>
+
+        const userInfo = {
+            id: 0,
+            username: "test",
+            password:"123"
+        }
+
+        const formEl = document.querySelector('form');
+        const usernameEl = document.querySelector('.username');
+        const passwordEl = document.querySelector('.password');
+        const errorMessageEl = document.querySelector('.errorMessage');
+
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const usernameInput = usernameEl.value;
+            const passwordInput = passwordEl.value;
+
+            if(usernameInput !== userInfo.username){
+                errorMessageEl.innerHTML = "아이디가 다릅니다.";
+            }else if(passwordInput !== userInfo.password){
+                errorMessageEl.innerHTML = "패스워드가 다릅니다.";
+            }else{
+                alert("로그인이 되었습니다!");
+            }
+        }
+        
+        formEl.addEventListener('submit', handleSubmit);
+
+
+
+    </script>
+    
+</body>
+</html>
