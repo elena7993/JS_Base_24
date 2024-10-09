@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+
+  <style>
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+
+form{
+  padding: 50px 100px;
+  position: relative;
+}
+
+input{
+  all: unset;
+  width: 100%;
+  max-width: 300px;
+  border-bottom: 1px solid lightgrey;
+  font-size: 18px;
+  padding: 10px;
+}
+
+i{
+  position: absolute;
+  top: 65px;
+  left: 400px;
+  font-size: 18px;
+}
+
+h2{
+  padding: 0 10px;
+}
+
+  </style>
+
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="영화제목을 입력하세요">
+    <a href="#">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+    <div class="search"></div>
+  </form>
+
+  <h3></h3>
+
+  <script>
+
+    const anime = [
+      {
+        id: 0,
+        title: "요리왕비룡",
+        desc: "사천의 특급요리사가 되는 여정...",
+        posterimg: "https://ah9szoaj9w.ecn.cdn.ofs.kr/images/tvee-admin/animax/content/key_204.png"
+      },
+      {
+        id: 1,
+        title: "소년탐정김전일",
+        desc: "할아버지의 이름에 걸고...!",
+        posterimg: "https://admin.img.afreecatv.com/admin/theater_info/2023/04/27/64006449e1beebd91.png"
+      },
+      {
+        id: 2,
+        title: "최애의아이",
+        desc: "아이시떼루요~~~",
+        posterimg: "https://blog.kakaocdn.net/dn/8rQfo/btsnYZLx9fG/lkJ3GgeN1rrGi9cKb0LbD0/img.jpg"
+      }
+    ];
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const searchEl = document.querySelector('.search');
+    const hEl = document.querySelector('h3');
+
+
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const animeInput = inputEl.value;
+      
+      const result = anime.filter((ani) => ani.title === animeInput);
+
+      if(result.length === 0){
+        searchEl.innerHTML = `<h3>검색결과가 없습니다</h3>`
+      }else{
+        const {title, desc, posterimg} = result[0];
+        searchEl.innerHTML = `<h3>${title}<h3>
+          <div>${desc}</div> <img src="${posterimg}">`;
+      }
+
+    }
+
+    formEl.addEventListener('submit', handleSubmit);
+
+    // result[0]만 사용하더라도 result의 내용이 달라지니까, 내가 입력한 검색어에 맞는 결과가 표시되는 됨.
+
+    
+    
+    // *객체 구조 분해 할당
+    // =>객체 구조 분해 할당은 객체의 속성들을 개별 변수에 한 번에 할당할 수 있도록 해주는 문법
+    // =>const {title, desc, posterimg} = anime;
+    // 이런 식으로 한번에 할당할 수 있다
+    
+    // searchEl.innerHTML = `<h3>${result[0].title}</h3> <div>${result[0].desc}</div> <img src="${anime[0].posterimg}">`;
+  </script>
+  
+</body>
+</html>
