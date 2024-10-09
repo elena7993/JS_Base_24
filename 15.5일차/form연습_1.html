@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a{
+      color: #000;
+      text-decoration: none;
+    }
+
+    form{
+      padding: 50px 100px;
+      position: relative;
+    }
+
+    input{
+      all: unset;
+      width: 100%;
+      max-width: 300px;
+      border-bottom: 1px solid lightgrey;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    i{
+      position: absolute;
+      top: 65px;
+      left: 400px;
+      font-size: 18px;
+    }
+
+    h2{
+      padding: 0 100px;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="검색어를 입력하세요">
+    <a href="#">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </form>
+
+  <h2></h2>
+
+  <script>
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const iEl = document.querySelector('i');
+    const hEl = document.querySelector('h2');
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const searchInput = inputEl.value;
+      hEl.innerText = `${inputEl.value}의 검색결과입니다.`
+    }
+    
+
+    formEl.addEventListener('submit', handleSubmit);
+
+    // 클릭해도 검색이 된다. 
+
+
+    const handleClick = (e) => {
+      e.preventDefault();
+
+      const searchInput = inputEl.value;
+      hEl.innerText = `${inputEl.value}의 검색결과입니다.`
+    }
+
+
+    iEl.addEventListener('click', handleClick);
+
+
+
+  </script>
+  
+</body>
+</html>
