@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+
+  <style>
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a{
+    color: #000;
+    text-decoration: none;
+  }
+
+  .wrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form{
+    width: 350px;
+    height: 600px;
+    border: 2px solid #444;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3{
+    font-size: 24px;
+  }
+
+  .dark_btn{
+    position: relative;
+  }
+
+  .dark_btn i{
+    position: absolute;
+    top: 21px;
+    left: -6px;
+  }
+
+
+  .main{
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 70px;
+  }
+
+  .sub{
+    font-size: 14px;
+    color: #a1a1a1;
+    margin-bottom: 30px;
+  }
+
+  input{
+    all: unset;
+    width: 250px;
+    height: 36px;
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+    margin: 5px 0;
+  }
+
+  button{
+    all: unset;
+    width: 250px;
+    height: 36px;
+    background-color: lightsalmon;
+    border: 1px solid none;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 900;
+    margin-top: 30px;
+    margin-bottom: 5px;
+
+  }
+
+  .desc{
+    color: salmon;
+    font-size: 14px;
+
+  }
+
+  .register{
+    font-size: 14px;
+    margin-top: 150px;
+  }
+
+  span{
+    color: salmon;
+  }
+
+  body.active_dark form{
+    background-color: #444;
+  }
+
+  body.active_dark .username,
+  .password{
+    border-color: #fff;
+  }
+
+  body.active_dark h3, p{
+    color: #fff;
+  }
+
+  body.active_dark span{
+    color: lightsalmon;
+  }
+
+  body.active_dark i{
+    color: lightsalmon;
+  }
+
+</style>
+
+</head>
+<body>
+
+  <div class="wrap">
+
+    <form>
+      <h3>LOGIN</h3>
+      <div class="dark_btn">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+      <p class="main">Welcome to Turtle!</p>
+      <p class="sub">keep your data safe</p>
+      <input class="username" type="username" placeholder="  email">
+      <input class="password" type="password" placeholder="  password">
+      <div class="errorMessage"></div>
+      <button>Login</button>
+      <p class="desc">Forget password?</p>
+      <p class="register">Don't have an account? <span>Register</span></p>
+    </form>
+
+  </div>
+
+  <script>
+
+    const darkBtnEl = document.querySelector('.dark_btn');
+    const getDark = localStorage.getItem("DARK_MODE");
+
+    
+      if(getDark === "ON"){
+        localStorage.setItem("DARK_MODE", "ON");
+        document.body.classList.add("active_dark")
+      };
+
+    
+
+    const handleDark = () => {
+      const getDark = localStorage.getItem("DARK_MODE");
+      
+      if(getDark === null){
+        localStorage.setItem("DARK_MODE", "ON");
+        document.body.classList.add("active_dark");
+      }else if(getDark === "ON"){
+        localStorage.removeItem("DARK_MODE", "OFF");
+        document.body.classList.remove("active_dark");
+      };
+    };
+
+    darkBtnEl.addEventListener('click', handleDark);
+
+  </script>
+  
+</body>
+</html>
