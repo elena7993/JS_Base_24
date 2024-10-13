@@ -7,12 +7,13 @@
 const formEl = document.querySelector('form');
 const inputEl = document.querySelector('input');
 const commentListEl = document.querySelector('.comment_list');
+const heartEl = document.querySelector('.heart');
 
 let comment = JSON.parse(localStorage.getItem("COMMENTS")) || [];
 
 for(let i = 0; i < comment.length; i++){
   const commentEl = document.createElement('div');
-  commentEl.innerText = comment[i];
+  commentEl.innerText = comment[i]; 
   commentListEl.append(commentEl);
 };
 
@@ -33,5 +34,18 @@ const handleSubmit = (e) => {
     inputEl.value = "";
   };
 };
+
+const handleClick = (e) =>{
+if(heartEl.classList.contains('fa-regular')){
+ e.target.parentNode.innerHTML = `<i class="fa-solid fa-heart active"></i>`
+}else{
+  e.target.parentNode.innerHTML = `<i class="fa-regular fa-heart"></i>`
+}
+heartEl.classList.toggle('fa-regular');
+heartEl.classList.toggle('fa-solid');
+};
+
+
+heartEl.addEventListener('click', handleClick);
 
 formEl.addEventListener('submit', handleSubmit);
