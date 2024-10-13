@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="이름을 입력하세요">
+    <button>저장</button>
+  </form>
+
+  <h2>저장된 이름: <span></span></h2>
+
+  <!-- 문제 1:
+사용자가 입력한 이름을 로컬스토리지에 저장하고, 페이지를 새로고침해도 저장된 이름을 불러와서 화면에 표시하세요.
+입력한 이름을 다시 변경하면, 로컬스토리지에 저장된 값도 변경되어야 합니다. -->
+
+  <script>
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const spanEl = document.querySelector('span');
+
+    
+    const getName = localStorage.getItem("NAME");
+
+    if(getName){
+      spanEl.innerText = getName;
+    };
+    
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      
+      const inputValue = inputEl.value;
+      localStorage.setItem("NAME", inputValue);
+      spanEl.innerText = inputValue;
+
+      inputEl.value = "";
+    }
+
+    formEl.addEventListener('submit', handleSubmit);
+    
+  </script>
+  
+</body>
+</html>

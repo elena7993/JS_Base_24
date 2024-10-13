@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #dbdbdd;
+      margin-top: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="검색입력">
+    <button>등록</button>
+  </form>
+
+  <div class="box"></div>
+
+  <!-- *문제
+
+사용자가 입력한 값을 localStorage에 저장하고, 새로고침을 해도 그 값이 남아있도록 하세요.
+페이지를 로드할 때 localStorage에 저장된 값이 있으면 자동으로 input 필드에 그 값을 채워 넣도록 하세요.
+힌트: localStorage.setItem()과 localStorage.getItem()을 사용하면 돼. -->
+
+  <script>
+
+    // 1. 어디에 이벤트? ->폼에
+    // 2.그럼 폼을 잡아야지
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const boxEl = document.querySelector('.box');
+
+    
+    const saveSearch = localStorage.getItem("SEARCH_LIST");
+    if(saveSearch){
+      inputEl.value = saveSearch;
+    };
+    // =>인풋필드에 값을 채우는 것임
+
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
+      const inputValue = inputEl.value;
+
+      localStorage.setItem("SEARCH_LIST", inputValue);
+      // =>입력된 값을 로칼스토리지에 저장함
+
+      const newSearch = document.createElement('div');
+      newSearch.classList.add('new_list');
+      boxEl.append(newSearch);
+      newSearch.innerHTML = `<div>${inputValue}</div>` 
+
+      inputEl.value = '';
+      
+    }
+
+    // 새로운 댓글이 로컬스토리지에 덮어쓰기 되고있음
+    // 즉 최신댓글만 저장되고 있다구!!
+      
+    formEl.addEventListener('submit', handleSubmit);
+
+  </script>
+  
+</body>
+</html>
