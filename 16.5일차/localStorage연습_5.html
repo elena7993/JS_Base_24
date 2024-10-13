@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    img{
+      width: 100%;
+      display: block;
+    }
+  
+    button{
+      all: unset;
+    }
+  
+    .wrap{
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  
+    .con{
+      width: 450px;
+      height: 450px;
+      border: 1px solid #dbdbdd;
+      border-radius: 15px;
+    }
+  
+    .header{
+      height: 80px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .user_img{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  
+    .user_name{
+      padding-left: 10px;
+    }
+  
+    .feed_img{
+      height: 290px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .feed_img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+  
+    }
+  
+    .footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 22px;
+      padding-left: 10px;
+    }
+  
+    input{
+      width: 300px;
+      border: 1px solid #dbdbdb;
+      border-radius: 15px;
+      padding: 5px;
+    }
+  
+    button{
+      width: 50px;
+      height: 20px;
+      border: 1px solid #dbdbdb;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+    }
+  
+    .comment_wrapper{
+      width: 450px;
+      height: 450px;
+      border: 1px solid #dbdbdd;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    .comment_list{
+      padding: 10px;
+    }
+  
+    </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <div class="con">
+
+      <div class="header">
+        <div class="user_img">
+          <img src="https://i.namu.wiki/i/U7t2-azNU-DkLNpIliHeue9o3luSIhc49B14wBkE0INk1OPNT2-0mEcJso1JFnkMEplpTBEPL3xA7LiCDjQaiQ.webp" alt="user_img">
+        </div>
+        <div class="user_name">비룡</div>
+      </div>
+  
+      <div class="feed_img">
+        <img src="https://i.ytimg.com/vi/i7zzBpKvh6s/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgUCg_MA8=&rs=AOn4CLCzyUDGyuwaAt9nPykzFMKGcfT8YA" alt="feed_img">
+      </div>
+  
+      <div class="footer">
+        <div class="heart">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <form>
+          <input class="comment" type="text" placeholder="맛있는 댓글을 입력하세요">
+          <button>등록</button>
+        </form>
+ 
+      </div>
+      
+    </div>
+    
+    <div class="comment_wrapper">        
+      <div class="comment_list"></div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
