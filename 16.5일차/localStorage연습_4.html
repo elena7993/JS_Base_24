@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .comment_box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #dbdbdd;
+      margin-top: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="댓글을 입력하세요">
+    <button>등록</button>
+  </form>
+
+  <div class="comment_box"></div>
+
+  <script>
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const commentBoxEl = document.querySelector('.comment_box');
+
+    const saveComment = localStorage.getItem("SAVE");
+    let comments = [];
+    
+    if(saveComment !== null){
+      comments = saveComment.split(",");
+    };
+    // 문자열을 쉼표로 구분하여 배열로 변환
+
+    for(let i = 0; i < comments.length; i++){
+      const commentsEl = document.createElement('div');
+      commentsEl.innerText = comments[i];
+      commentBoxEl.append(commentsEl);
+    }
+
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+
+      const inputValue = inputEl.value.trim();
+      // 공백만 입력된 경우를 방지하기 위해 trim 사용
+      
+
+      if(inputValue !== ""){
+        // 새 댓글을 배열에 추가함
+
+        comments[comments.length] = inputValue;
+        localStorage.setItem("SAVE", comments.join(","));
+
+        const commentEl = document.createElement('div');
+        commentEl.innerText = inputValue;
+        commentBoxEl.append(commentEl);
+        
+        inputEl.value = "";
+      }
+      
+    }
+
+    formEl.addEventListener('submit', handleSubmit);
+
+  </script>
+  
+</body>
+</html>
