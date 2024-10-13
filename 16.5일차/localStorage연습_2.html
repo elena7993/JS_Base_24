@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .comment_box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #dbdbdd;
+      margin-top: 10px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <form>
+    <input type="text" placeholder="댓글을 입력하세요">
+    <button>등록</button>
+  </form>
+
+  <div class="comment_box"></div>
+
+  <script>
+
+    const formEl = document.querySelector('form');
+    const inputEl = document.querySelector('input');
+    const commentBoxEl = document.querySelector('.comment_box');
+
+    let commentCount = localStorage.getItem("commentCount");
+    if (commentCount === null) {
+      commentCount = 0;
+    } else {
+      commentCount = parseInt(commentCount);
+      // 문자열을 숫자로 반환함 good!
+    }
+
+    for (let i = 1; i <= commentCount; i++) {
+      const comment = localStorage.getItem(`comment${i}`);
+      if (comment !== null) {
+        const commentEl = document.createElement('div');
+        commentEl.innerText = comment;
+        commentBoxEl.append(commentEl);
+      }
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const inputValue = inputEl.value.trim();
+
+      if (inputValue !== "") {
+        commentCount++;
+        localStorage.setItem(`comment${commentCount}`, inputValue);
+        localStorage.setItem("commentCount", commentCount);
+
+        const commentEl = document.createElement('div');
+        commentEl.innerText = inputValue;
+        commentBoxEl.append(commentEl);
+
+        inputEl.value = "";
+      }
+    }
+
+    formEl.addEventListener('submit', handleSubmit);
+                                                
+  </script>
+  
+</body>
+</html>
