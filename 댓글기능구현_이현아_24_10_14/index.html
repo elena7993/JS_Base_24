@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            width: 100%;
+            display: block;
+        }
+
+        button{
+            all: unset;
+        }
+
+        .wrap{
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .con{
+            width: 450px;
+            height: 450px;
+            border: 1px solid #dbdbdd;
+            border-radius: 15px;
+        }
+
+        .header{
+            height: 80px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+  
+        .user_img{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .user_img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+  
+        .user_name{
+            padding-left: 10px;
+        }
+  
+        .feed_img{
+            height: 290px;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        .feed_img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+  
+        }
+  
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 22px;
+            padding-left: 10px;
+        }
+  
+        input{
+            width: 300px;
+            border: 1px solid #dbdbdb;
+            border-radius: 15px;
+            padding: 5px;
+        }
+  
+        button{
+            width: 50px;
+            height: 20px;
+            border: 1px solid #dbdbdb;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+  
+        .comment_wrapper{
+            width: 450px;
+            height: 450px;
+            border: 1px solid #dbdbdd;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .comment_list{
+             padding: 10px;
+        }
+
+        .fa-solid.active{
+            color: red;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="con">
+
+            <div class="header">
+                <div class="user_img">
+                    <img src="https://cdn.lecturernews.com/news/photo/202407/156789_409803_228.jpg" alt="user_img">
+                </div>
+                <div class="user_name">Mitsuha Miyamizu</div>
+            </div>
+
+            <div class="feed_img">
+                <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201702/10/htm_20170210154256467826.jpg" alt="feed_img">
+            </div>
+
+            <div class="footer">
+
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                    <!-- <i class="fa-solid fa-heart"></i> -->
+                </div>
+
+                <form>
+                    <input type="text" placeholder="댓글을 입력하세요">
+                    <button>등록</button>
+                </form>
+
+            </div>
+
+            <div class="comment_wrapper">
+                <div class="comment_list"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
