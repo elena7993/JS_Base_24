@@ -62,7 +62,7 @@
             e.preventDefault();
             const inputValue = inputEl.value;
 
-            const commentEl = document.createComment('p');
+            const commentEl = document.createElement('p');
             commentEl.classList.add('comment_list');
             // =이렇게 클래스를 추가하면 css로 꾸밀수 있다~
             commentEl.innerText = inputValue;
